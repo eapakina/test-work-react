@@ -10,8 +10,7 @@ export const getServicesThunk = createAsyncThunk('services/getServices', async (
 export const getItemThunk = createAsyncThunk(
   "services/getService",
   async (id) => {
-    const { data } = await axios(`http://localhost:7070/api/services/${id} `);
-    console.log(data);
+    const { data } = await axios(`http://localhost:7070/api/services/${id}`);
     return data;
 
   });

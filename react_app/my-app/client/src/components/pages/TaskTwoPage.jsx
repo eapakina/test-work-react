@@ -11,7 +11,6 @@ export default function TaskTwoPage() {
   useEffect(() => {
     void dispatch(getServicesThunk());
   }, []);
-  console.log(services);
 
   if (loading) {
     return <div>Loading...</div>;

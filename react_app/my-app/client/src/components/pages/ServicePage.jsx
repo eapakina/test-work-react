@@ -12,15 +12,15 @@ export default function ServicePage() {
   const error = useAppSelector((store) => store.service.error);
 
   const dispatch = useAppDispatch();
+  
   useEffect(() => {
     if (retry) {
       setRetry(false);
       dispatch(getItemThunk(id));
+      return
     }
     dispatch(getItemThunk(id));
-  }, [dispatch, id, retry]);
-  console.log(loading);
-  console.log({ info });
+  }, [ retry]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -28,7 +28,9 @@ export default function ServicePage() {
   if (error) {
     return (
       <div>
-        Произошла ошибка! {error}{" "}
+        Произошла ошибка! 
+        <br></br>
+        {error}{" "}
         <button onClick={() => setRetry(true)}>Повторить запрос</button>
       </div>
     );
