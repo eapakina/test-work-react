@@ -15,8 +15,6 @@ function App() {
 <Route path="/task1" element={<TaskOnePage />} />
 <Route path="/task2" element={<TaskTwoPage />} />
 <Route path="/services/:id" element={<ServicePage />} />
-
-
 </Routes>
     );
 }

@@ -27,11 +27,11 @@ export default function ServicePage() {
   }
   if (error) {
     return (
-      <div>
+      <div style={{ backgroundColor: '#FFB6C1', color: 'red', padding: '10px' }}>
         Произошла ошибка! 
         <br></br>
         {error}{" "}
-        <button onClick={() => setRetry(true)}>Повторить запрос</button>
+        <button style={{ backgroundColor: 'black', color: 'white', padding: '5px 10px', border: 'none', cursor: 'pointer' }} onClick={() => setRetry(true)}>Повторить запрос</button>
       </div>
     );
   }
